@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今日の献立メーカー🍳</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>今日の献立メーカー🍳</h1>
+        <p>何を作るか迷ったときに！</p>
+    </header>
+
+    <main>
+        <div class="tabs">
+            <button class="tab-btn active" data-target="ingredient-tab">🥒 材料から</button>
+            <button class="tab-btn" data-target="random-tab">🎲 ランダム</button>
+            <button class="tab-btn" data-target="question-tab">💬 質問から</button>
+        </div>
+
+        <div class="tab-content">
+            <!-- 材料から絞り込む -->
+            <section id="ingredient-tab" class="tab-pane active">
+                <h2>冷蔵庫にある材料を選択</h2>
+                <div id="ingredient-list" class="tag-container"></div>
+                <button id="search-by-ingredient" class="primary-btn">この材料で作れる料理を探す</button>
+                <div id="ingredient-result" class="result-area"></div>
+            </section>
+
+            <!-- ランダムで決める -->
+            <section id="random-tab" class="tab-pane">
+                <h2>運命のルーレット</h2>
+                <div class="random-machine">
+                    <div id="random-display" class="random-display">ここになにかが出ます！</div>
+                    <button id="start-random" class="primary-btn pulse">献立をルーレットで決める！</button>
+                    <div id="random-result" class="result-area"></div>
+                </div>
+            </section>
+
+            <!-- 質問で決める -->
+            <section id="question-tab" class="tab-pane">
+                <div id="question-container">
+                    <h2 id="question-text">今日の気分は？</h2>
+                    <div id="answer-buttons" class="answer-buttons">
+                        <!-- ボタンがここに生成されます -->
+                    </div>
+                </div>
+                <div id="question-result" class="result-area hidden"></div>
+                <button id="reset-question" class="secondary-btn hidden">もう一度診断する</button>
+            </section>
+        </div>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
